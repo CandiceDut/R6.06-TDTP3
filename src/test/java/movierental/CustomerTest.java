@@ -1,8 +1,7 @@
 package movierental;
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class CustomerTest {
 
@@ -27,6 +26,7 @@ public class CustomerTest {
                 "Amount owed is 19.0\n" +
                 "You earned 7 frequent renter points";
 
-        assertEquals(expected, customer.statement());
+        //assertEquals(expected, customer.statement());
+        assertThat(customer.statement()).isEqualTo(expected);
     }
 }
